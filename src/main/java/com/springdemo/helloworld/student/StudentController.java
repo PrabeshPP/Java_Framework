@@ -9,11 +9,9 @@ import java.util.List;
 @RestController
 @RequestMapping(path ="api/v1/student")
 public class StudentController {
-   private final StudentService studentService;
+   StudentService studentService=new StudentService();
 
-    public StudentController(StudentService studentService) {
-        this.studentService = studentService;
-    }
+
 
     @GetMapping
     public List<Student> getStudents(){
