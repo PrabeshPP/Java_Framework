@@ -49,8 +49,25 @@ public class Student {
         this.email=email;
     }
 
+    public String getName(){
+        return name;
+    }
 
+    public Long getId(){
+        return id;
+    }
 
+    public String getEmail(){
+        return email;
+    }
+
+    public LocalDate getDate(){
+        return date;
+    }
+
+    public int getAge(){
+        return age;
+    }
 
 
 
