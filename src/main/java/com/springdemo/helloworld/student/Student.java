@@ -9,4 +9,16 @@ public class Student {
     private Date date;
     private  String email;
 
+    public Student(){
+
+    }
+
+    public Student(Long id,String name,int age,Date date,String email){
+        this.id=id;
+        this.name=name;
+        this.age=age;
+        this.date=date;
+        this.email=email;
+    }
+
 }
