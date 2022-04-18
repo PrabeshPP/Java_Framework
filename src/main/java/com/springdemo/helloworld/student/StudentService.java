@@ -20,6 +20,16 @@ public class StudentService {
 
 
 
+                ),
+                new Student(
+                        1L,
+                        "Fa",
+                        202,
+                        LocalDate.of(2060,3,21),
+                        "foo.bista400@gmail.com"
+
+
+
                 )
         );
     }
