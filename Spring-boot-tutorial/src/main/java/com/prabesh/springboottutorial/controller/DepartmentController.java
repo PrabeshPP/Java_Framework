@@ -30,5 +30,12 @@ public class DepartmentController {
                 return departmentService.fetchDepartmentByID(departmentId);
         }
 
+        @DeleteMapping("/departments/{id}")
+        public String deleteDepartmentById(@PathVariable("id") Long departmentId){
+                departmentService.deleteDepartmentById(departmentId);
+                return "Department of id"+departmentId+"was successfully deleted";
+
+        }
+
 
 }
