@@ -1,6 +1,7 @@
 package com.prabesh.springboottutorial.controller;
 
 import com.prabesh.springboottutorial.entity.Department;
+import com.prabesh.springboottutorial.error.DepartmentNotFoundException;
 import com.prabesh.springboottutorial.service.DepartmentService;
 import com.prabesh.springboottutorial.service.DepartmentServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +29,7 @@ public class DepartmentController {
         }
 
         @GetMapping("/departments/{id}")
-        public Department fetchById(@PathVariable("id") Long departmentId){
+        public Department fetchById(@PathVariable("id") Long departmentId) throws DepartmentNotFoundException {
                 return departmentService.fetchDepartmentByID(departmentId);
         }
 

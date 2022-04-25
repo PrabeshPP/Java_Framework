@@ -1,6 +1,7 @@
 package com.prabesh.springboottutorial.service;
 
 import com.prabesh.springboottutorial.entity.Department;
+import com.prabesh.springboottutorial.error.DepartmentNotFoundException;
 
 import java.util.List;
 import java.util.Optional;
@@ -11,7 +12,7 @@ public interface DepartmentService {
     public List<Department> fetchDepartmentList();
 
 
-    public Department fetchDepartmentByID(Long departmentId);
+    public Department fetchDepartmentByID(Long departmentId) throws DepartmentNotFoundException;
 
     public void deleteDepartmentById(Long departmentId);
 

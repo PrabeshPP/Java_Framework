@@ -1,6 +1,7 @@
 package com.prabesh.springboottutorial.service;
 
 import com.prabesh.springboottutorial.entity.Department;
+import com.prabesh.springboottutorial.error.DepartmentNotFoundException;
 import com.prabesh.springboottutorial.respository.DepartmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,8 +26,13 @@ public class DepartmentServiceImpl implements  DepartmentService{
     }
 
     @Override
-    public Department fetchDepartmentByID(Long departmentId) {
-        return departmentRepository.findById(departmentId).get();
+    public Department fetchDepartmentByID(Long departmentId) throws DepartmentNotFoundException {
+        Optional<Department> department= departmentRepository.findById(departmentId);
+        if(!department.isPresent()){
+            throw new DepartmentNotFoundException("Department is not currently available!");
+        }
+
+        return department.get();
     }
 
     @Override
